@@ -4,7 +4,7 @@
 
 # Type casting is a method used for changing the variables / values declared in a certain data type into a different data type 
 # in order to match for the operation required to be performed by the code snippet. 
-# In python, this feature can be accomplished by using the constructor functions like int(), string(), float(), etc. 
+# In python, this feature can be accomplished by using built in functions like int(), string(), float(), etc. 
 # Think of casting a spell on something to change it into what you need
 # The execution of the type casting process can be performed by using two different types of type casting:
 # implicit type casting and explicit type casting.
