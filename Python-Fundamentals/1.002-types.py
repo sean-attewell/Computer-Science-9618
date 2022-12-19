@@ -1,3 +1,28 @@
+# In Python, everything is an object.
+# An Object is an instance of a Class.
+
+a = 1
+b = "hello"
+c = [1, 2, 3]
+
+print(isinstance(a, object))  # True
+isinstance(b, object)  # True
+isinstance(c, object)  # True
+
+# Additionally, all objects in Python have three things:
+# Identity
+# Type
+# Value
+
+# Identity
+print(id(a))  # 1483629664 <-- address in memory
+
+# Type
+print(type(a))  # <class 'int'>
+
+# Value
+print(a)  # 1
+
 # Python is a dynamically typed language, not a statically typed language
 # You don't have to declare a variable's type
 # In the C language for example, you'd have to specify that something is an integer: "int myNum = 15;"
