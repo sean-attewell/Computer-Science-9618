@@ -12,7 +12,7 @@ if name == "Elon" and age == 51:
     print("You are a 51 year old person named Elon.")
 
 
-# So in this case 'name == "Elon" and age == 49' is an expression
+# So in this case 'name == "Elon" and age == 51' is an expression
 # being after the 'if' means it's in a boolean context
 # python expects something to evaluate to true for false after the if
 # "if X is true, then do this..."
