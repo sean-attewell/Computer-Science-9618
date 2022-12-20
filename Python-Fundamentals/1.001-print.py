@@ -20,7 +20,7 @@ print(my_string)
 # Calling a function causes some other previously written code somwhere else to run
 # () is called the call operator
 
-print # this does nothing without the call operator. Turn the key!
+print # this does nothing without the call operator. Press the button!
 
 # Some functions, like the print function, take in data which we call arguments
 # Any object passed as an argument into print will get converted into a string type before outputted to the screen.
