@@ -28,6 +28,8 @@ print(fruit) # this now prints cherry as it was the last one it was set to
 for x in range(5):
     print(x)
 
+# So the inbuilt range function has created an iterable to loop over
+
 # Prints 2, 3, 4, 5, 6
 for x in range(2, 7):
     print(x)
