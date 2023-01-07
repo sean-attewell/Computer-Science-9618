@@ -12,10 +12,13 @@ if name == "Elon" and age == 51:
     print("You are a 51 year old person named Elon.")
 
 
-# So in this case 'name == "Elon" and age == 51' is an expression
+# So in this case 'name == "Elon" and age == 51' is a conditional expression
+# It evaluates to true or false
 # being after the 'if' means it's in a boolean context
 # python expects something to evaluate to true for false after the if
 # "if X is true, then do this..."
+
+# Is this the first time we've seen indentation?
 
 if name == "Elon" or name == "Bill":
     print("Your name is either Elon or Bill.")
@@ -48,6 +51,7 @@ else:
 
 # You can string multiple elif clauses together in a row if you like
 
+
 if 'a' in 'bar':
     print('foo')
 elif 1/0:
@@ -58,6 +62,9 @@ elif 1/0:
 # prints foo
 # The second expression contains a division by zero, and the third references an undefined variable var.
 # Either would raise an error, but neither is evaluated because the first condition specified is true.
+
+
+# Can you write a conditional statement for me which will tell the user if a number is positive, negative or zero
 
 
 # ***************************************************************
