@@ -1,6 +1,43 @@
+# http://www.ibiblio.org/g2swap/byteofpython/read/logical-and-physical-lines.html
+
+# A physical line is what you see when you write the program. 
+# A logical line is what Python sees as a single statement. 
+# Python implicitly assumes that each physical line corresponds to a logical line.
+
+#  you want to specify more than one logical line on a single physical line, then you have to explicitly specify this using a semicolon (;) 
+#  which indicates the end of a logical line/statement.
+
+i = 5
+print(i)
+
+# can also be written on one line as:
+
+i = 5; print(i)
+
+# ...But the idea is to avoid the semicolon as far as possible since it leads to more readable code
+# This makes python look nice and clean
+
+# You can also do the opposite, and split one logical line over multiple physical lines:
+print \
+(i)
+
+# But please try not to.
+# It might however be helpful when dealing with very long strings:
+
+s = 'Pretend this is a really long string. \
+This continues the string.'
+print(s)
+
+# but don't get \ confused with \n ... :)
+
+print('This is written \
+over 2 physical lines, but printed on one line')
+print('this is written on one pysical line but\nprinted over 2 lines')
+
 
 # In python, Whitespace (indentation) can denote code blocks.
 # Python gives meaning to the amount of whitespace (indentation level) that comes before a logical line of code.
+
 
 if True:
     print('This is 4 spaces')
@@ -21,17 +58,18 @@ if (hour < 18) {
 }
 """
 
-# So you're still having to indent to make it human readable
-# but you need the curly braces to make the code run, because the language is not whitespace sensitive
+# You need the curly braces to make the code run, because the language is not whitespace sensitive
+# But you're still having to indent to make it human readable
+ 
 # You could write the same javascript like this all on one line and it would still run:
 # if (hour < 18) {console.log("Good day")} else {console.log("Good evening")};
 # or even this runs fine:
 # if(hour < 18){console.log("Good day")}else{console.log("Good evening")};
 
 # You will also notice the end of a statement having a semi colon in Javascript
-# Python doesn't need this 
+# As we've seen, Python doesn't need this unless you want multiple logical lines on one physical line. 
 # Whitespace is instead used to denote the end of a logical line of code. 
-# In Python, a logical line of code's end (a statement or a definition) is marked by a '\n' (newline).
+# A logical line of code's end is marked by a '\n' (newline).
 
 
 # The Python pass Statement
@@ -83,15 +121,6 @@ else:
 # When you really analyse it, Python’s whitespace sensitivity is actually the only logical choice for a programming language, 
 # because you only communicate your intent one way, and that intent is read the same way by humans and computers. 
 # The only reason to use a whitespace-insensitive language is that that’s the way we’ve always done things, and that’s never a good reason.
-
-
-# Though not super common, you can continue one line on the line below if you need to like so:
-
-if True:
-  print('This is written on one line')
-  print('This is written \
-over 2 lines')
-  print('this is written on one line but\nprinted over 2 lines')
 
 
 
