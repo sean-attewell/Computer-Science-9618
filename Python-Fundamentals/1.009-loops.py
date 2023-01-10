@@ -12,7 +12,9 @@ for fruit in myList:
 
 # A list is an iterable
 # So you can use a for loop to iterate over it! 
+# for and in are keywords
 # Note that we have created the fruit variable 
+# This changes to a different member of the list each loop
 
 print(fruit) # this now prints cherry as it was the last one it was set to
 
@@ -47,7 +49,7 @@ for x in range(1, 8, 2):
 count = 0
 while count < 5:
     print(count)
-    count += 1
+    count = count + 1
 
 # First time we've seen += ?
 # += is Addition Assignment operator
@@ -91,7 +93,6 @@ for x in range(8):
     if x % 2 == 0:
         continue
     print(x)
-
 
 
 # ***************************************************************
