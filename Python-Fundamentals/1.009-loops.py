@@ -43,7 +43,9 @@ for x in range(1, 8, 2):
 
 # while loop:
 
-# The While loop will keep going WHILE a boolean evaluates to true
+# The While loop will keep looping WHILE a boolean evaluates to true.
+# Between the while keyword and the colon is a boolean context.
+# Just as it was between the if keyword and the colon in conditional statments.
 
 # Prints 0, 1, 2, 3, 4
 count = 0
@@ -51,7 +53,7 @@ while count < 5:
     print(count)
     count = count + 1
 
-# First time we've seen += ?
+# Have we seen '+=' before?
 # += is Addition Assignment operator
 # lets you add two values together and assign the resultant value to a variable.
 # otherwise you'd have to write: count = count + 1
@@ -79,6 +81,7 @@ while True:
     if count >= 5:
         break
 
+# "While True" will always evaluate to true, so it will go on forever
 # The break statement terminates the loop containing it. 
 # In this example the while loop stops at 4 because it hit the break
 # If the break statement is inside a nested loop (loop inside another loop), the break statement will only terminate the innermost loop.
@@ -89,10 +92,11 @@ while True:
 
 # Prints 1, 3, 5, 7
 for x in range(8):
-    # if x is even, skip this block and do not print
     if x % 2 == 0:
         continue
     print(x)
+
+# if x is even, skip this block and do not print
 
 
 # ***************************************************************
@@ -106,45 +110,57 @@ for x in range(8):
 # If you need to loop over multiple lists at the same time, use zip
 
 # Stackoverflow example Q
-
 # https://stackoverflow.com/questions/522563/accessing-the-index-in-for-loops
 
-# ints = [8, 23, 45, 12, 78]
-# i = 0
-# for num in range(len(ints)):
-#     print('item #{} = {}'.format(i, ints[i]))
-#     i += 1
+ints = [8, 23, 45, 12, 78]
 
-# colors = ["red", "green", "blue", "purple"]
-# for color in colors:
-#     print(color)
+# How would you print both the index and the number?
+
+i = 0
+for num in ints:
+    print(f'item #{i} = {num}')
+    i += 1
+
+# Here we manually make a counter to track the indexes we need
 
 # The enumerate function gives us an iterable where each element is a tuple that contains the index of the item and the original item value.
 
 # This function is meant for solving the task of:
-
 # Accessing each item in a list (or another iterable)
 # Also getting the index of each item accessed
 # So whenever we need item indexes while looping, we should think of enumerate.
 
-# Note: the start=1 option to enumerate here is optional. If we didn’t specify this, we’d start counting at 0 by default.
 
 ints = [8, 23, 45, 12, 78]
 
-for i, num in enumerate(ints, start=1):
-    print('item #{} = {}'.format(i, num))
+for i, num in enumerate(ints):
+    print(f'item #{i} = {num}')
+
+# Generally indexes are for accessing the data at that index
+# But we already have access to it in a regular for in loop, so this will be rare.
+
+
+# The start=1 in the example below is optional. 
+# It starts counting at 0 by default (which matches the actual index).
+
+# for i, num in enumerate(ints, start=1):
+#     print(f'item #{i} = {num}')
+
+
+
 
 # https://treyhunner.com/2016/04/how-to-loop-with-indexes-in-python/
 
 # Often when we use list indexes, it’s to look something up in another list.
 
-# colors = ["red", "green", "blue", "purple"]
-# ratios = [0.2, 0.3, 0.1, 0.4]
-# for i, color in enumerate(colors):
-#     ratio = ratios[i]
-#     print("{}% {}".format(ratio * 100, color))
+colors = ["red", "green", "blue", "purple"]
+ratios = [0.2, 0.3, 0.1, 0.4]
+for i, color in enumerate(colors):
+    ratio = ratios[i]
+    print(f"{ratio * 100}% {color}")
 
-# Note that we only need the index in this scenario because we’re using it to lookup elements at the same index in our second list. What we really want is to loop over two lists simultaneously: the indexes just provide a means to do that.
+# Note that we only need the index in this scenario because we’re using it to lookup elements at the same index in our second list. 
+# What we really want is to loop over two lists simultaneously: the indexes just provide a means to do that.
 
 # We don’t actually care about the index when looping here. Our real goal is to loop over two lists at once. This need is common enough that there’s a special built-in function just for this.
 
@@ -153,13 +169,15 @@ for i, num in enumerate(ints, start=1):
 colors = ["red", "green", "blue", "purple"]
 ratios = [0.2, 0.3, 0.1, 0.4]
 for color, ratio in zip(colors, ratios):
-    print("{}% {}".format(ratio * 100, color))
+    print(f"{ratio * 100}% {color}")
+
 
 # The zip function takes multiple lists and returns an iterable that provides a tuple of the corresponding elements of each list as we loop over it.
 
 # Note that zip with different size lists will stop after the shortest list runs out of items.
 
 
-# If you find yourself tempted to use range(len(my_list)) or a loop counter, think about whether you can reframe your problem to allow usage of zip or enumerate (or a combination of the two).
+# If you find yourself tempted to use range(len(my_list)) or a loop counter, 
+# think about whether you can reframe your problem to allow usage of zip or enumerate (or a combination of the two).
 
 # In fact, if you find yourself reaching for enumerate, think about whether you actually need indexes at all. It’s quite rare to need indexes in Python.

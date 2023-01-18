@@ -67,8 +67,8 @@ food_printer(fruits)
 # Sometimes a function has an observable effect in some way
 # it might display values in the console, modify a mutable (changable) data structure like a list, modify a file, or produce graphics. 
 # This is called a side effect.
-# Side effects are different from returned values because they are not the output,
-# and many side effects can occur in one function. 
+# Side effects are different from returned values because they are not the output.
+# Many side effects can occur in one function. 
 # A function, however, can return only one value.
 # Importantly, returned values can be used in future computations. Side effects cannot.
 
@@ -92,11 +92,19 @@ print(variable)
 # It is an object of its own datatype
 
 
+# Functions have to be defined before they are called...
+# That probably sounds obvious
+# But in other languages such as JavaScript for example, that's not the case!
+
+
 # ***************************************************************
 # BONUS
 # ***************************************************************
 
 # In Python, the number of arguments passed to the function call has to match the number of parameters defined in the function definition 
+
+# def greet(name, greeting):
+#     print(f"Hello {name}, {greeting}")
 
 # greet("Anna") 
 # This throws an error:
