@@ -42,7 +42,9 @@ print(y.studentID) # 123
 # print(y.firstname) # AttributeError: 'Student' object has no attribute 'firstname'
 
 
-# Python also has a super() function that will make the child class inherit all the methods and properties from its parent:
+# Python also has a super() function 
+# The super() function returns an object that represents the parent class.
+
 
 class Student(Person):
   def __init__(self, fname, lname, year):
@@ -53,11 +55,12 @@ z = Student("Mike", "Olsen", 2019)
 z.printname()
 print(z.graduationyear)
 
-# Q: Why does the second init on line 49 called not need self?
+# Q: Why does the __init__ on line 49 not need self?
 # A: Because it is being called, not defined!
 
 # The student __init__ method is called automatically when we instantiate the class
-# and it's the student __init__ method that calles the parent __init__ method 
+# and it's the student __init__ method that calls the parent __init__ method 
+# So there is a chain reaction!
 
  
 # Let's add some methods to the child class...
@@ -81,7 +84,10 @@ a.welcome()
 
 a.printname()
 
-# However, if we need to access the superclass method from the subclass, we use the super() method again.
+# The new printname() runs instead of the parent printname()
+# This is just the same as the child __init__ running instead of the parent __init__
+# And in just the same way, if we need to access the superclass method from the subclass, we use the super() method again.
+
 class Animal:
     
     def eat(self):
@@ -103,6 +109,15 @@ labrador = Dog()
 
 labrador.eat()
 
+# You could just call Animal().eat() instead of super().eat()...
+# But since we do not need to specify the name of the base class when we call super()
+# we can easily change the base class name (if we need to)
+
+# Method Resolution Order (MRO) is the order in which methods should be inherited in the presence of multiple inheritance. 
+# You can view the MRO by using the __mro__ attribute.
+
+print(Dog.__mro__)
+# (<class '__main__.Dog'>, <class '__main__.Animal'>, <class 'object'>)
 
 # ***************************************************************
 # BONUS
@@ -116,3 +131,5 @@ class B:         # define your class B
   pass
 class C(A, B):
   pass   # subclass of A and B
+
+# Let me know if you need to cover this and we can go into a proper example!
