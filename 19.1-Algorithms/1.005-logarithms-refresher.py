@@ -68,6 +68,12 @@
 # BONUS
 # ***************************************************************
 
+# Here is a great video on this topic by 3Blue1Brown
+# Awesome youtube channel at visualising math concepts
+# It covers the 'alternate notation' idea 
+# https://www.youtube.com/watch?v=cEvgcoyZvB4
+
+
 # Think of a log price chart.
 # Expontential growth is often plotted with a log scale.
 # On a logarithmic scale, big growth is clearer to see
