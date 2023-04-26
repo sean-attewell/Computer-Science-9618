@@ -29,7 +29,7 @@
 # Please look at big-O-complexity-chart.jpeg
 # x axis: n represents the size of the data (number of elements)
 # y axis: the number of operations
-# So you're looking at how the number of operations changes, depending on the size of the data
+# So you're looking at how the  operations changes, depending on the size of the data
 
 # So big O notation for time complexity looks like:
 # O(n)
